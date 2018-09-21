@@ -1,6 +1,6 @@
 import { autoinject } from "aurelia-framework";
 
-import { ArticleService } from './../../shared/services/article-service';
+import { ArticleService } from '../../shared/services/article-service';
 
 @autoinject()
 export class ProfileArticleComponent {    

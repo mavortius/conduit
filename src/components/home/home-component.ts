@@ -1,8 +1,8 @@
 import { autoinject, Disposable, BindingEngine } from "aurelia-framework";
 
-import { TagService } from './../../shared/services/tag-service';
-import { ArticleService } from './../../shared/services/article-service';
-import { SharedState } from './../../shared/state/shared-state';
+import { TagService } from '../../shared/services/tag-service';
+import { ArticleService } from '../../shared/services/article-service';
+import { SharedState } from '../../shared/state/shared-state';
 
 @autoinject()
 export class HomeComponent {

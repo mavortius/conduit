@@ -1,8 +1,8 @@
 import { autoinject } from "aurelia-framework";
 import { Router } from 'aurelia-router';
 
-import { UserService } from './../../shared/services/user-service';
-import { SharedState } from './../../shared/state/shared-state';
+import { UserService } from '../../shared/services/user-service';
+import { SharedState } from '../../shared/state/shared-state';
 
 @autoinject()
 export class SettingsComponent {

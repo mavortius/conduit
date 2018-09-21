@@ -14,17 +14,17 @@ export class ArticleService {
   }
 
   get(slug) {
-    return this.apiService.get(`${resource}${slug}`)
+    return this.apiService.get(`${resource}/${slug}`)
       .then(data => data.article);
   }
 
   destroy(slug) {
-    return this.apiService.delete(`${resource}${slug}`);
+    return this.apiService.delete(`${resource}/${slug}`);
   }
 
   save(article) {
     if (article.slug) {
-      return this.apiService.put(`${resource}${article.slug}`, { article })
+      return this.apiService.put(`${resource}/${article.slug}`, { article })
         .then(data => data.article);
     } else {
       return this.apiService.post(resource, {article})
@@ -33,7 +33,7 @@ export class ArticleService {
   }
 
   favorite(slug) {
-    return this.apiService.post(`${resource}${slug}/favorite`);
+    return this.apiService.post(`${resource}/${slug}/favorite`);
   }
 
   unfavorite(slug) {

@@ -1,7 +1,7 @@
-import { ProfileService } from './../../shared/services/profile-service';
-import { SharedState } from './../../shared/state/shared-state';
+import { autoinject, computedFrom, PLATFORM } from "aurelia-framework";
 import { Router, RouterConfiguration } from 'aurelia-router';
-import { autoinject, computedFrom } from "aurelia-framework";
+
+import { SharedState } from '../../shared/state/shared-state';
 import { ProfileService } from 'shared/services/profile-service';
 
 @autoinject()
@@ -11,12 +11,23 @@ export class ProfileComponent {
   profile: Profile;
 
   constructor(private sharedState: SharedState,
-    private profileService: ProfileService) { }
+              private profileService: ProfileService) {
+  }
 
   configureRouter(config: RouterConfiguration, router: Router): void {
     config.map([
-      { route: '', moduleId: 'components/profile/profile-article-component', name: 'profilearticle', title: 'Profile' },
-      { route: 'favorites', moduleId: 'components/profile/profile-favorites-component', name: 'profilefavorites', title: 'Profile' }
+      {
+        route: [''],
+        moduleId: PLATFORM.moduleName('components/profile/profile-article-component'),
+        name: 'profilearticle',
+        title: 'Profile'
+      },
+      {
+        route: ['favorites'],
+        moduleId: PLATFORM.moduleName('components/profile/profile-favorites-component'),
+        name: 'profilefavorites',
+        title: 'Profile'
+      }
     ]);
 
     this.router = router;
